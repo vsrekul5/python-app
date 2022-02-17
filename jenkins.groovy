@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    envoronment{
+    environment{
         registry = 'vsrekul/mypythonapp'
         dockerImage = ''
         registryCredentials = 'dh_id'
