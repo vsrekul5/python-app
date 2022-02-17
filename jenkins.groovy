@@ -19,7 +19,6 @@ pipeline{
                 
                 }                
             }
-        }
         stage('upload the image to the Dockr Hub'){
             steps{
                 docker.withRegistr('', registryCredentials){
@@ -35,8 +34,8 @@ pipeline{
         }
         stage('Run the app in a docker container'){
             steps{
-                dockerImage.run("-p 8096:5000 --rm --name mypyappContainer")
+                sudo docker run -p 8091:5000 --rm --name mypythonappContainer vsrekul/mypythonapp
             }
         }
-    
+    }  
 }
