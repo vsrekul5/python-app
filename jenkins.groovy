@@ -29,12 +29,12 @@ pipeline{
         stage('stop container'){
             steps{
                sh 'docker ps -f name=mypythonappContainer -q | xargs --no-run-if-empty docker container stop'
-               sh 'docker container ls -a -fname=mypyappContainer -q | xargs -r docker container rm'
+               sh 'docker container ls -a -fname=mypythonappContainer -q | xargs -r docker container rm'
             }
         }
         stage('Run the app in a docker container'){
             steps{
-                sudo docker run -p 8091:5000 --rm --name mypythonappContainer vsrekul/mypythonapp
+                dockerImage.run("-p 8096:5000 --rm --name mypythonappContainer")
             }
         }
     }  
