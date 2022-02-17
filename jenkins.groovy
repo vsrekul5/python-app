@@ -32,7 +32,7 @@ pipeline{
         }
         stage('Run the app in a docker container'){
             steps{
-                sudo docker run -p 8091:5000 --rm --name mypythonappContainer vsrekul/mypythonapp
+                dockerImage.run("-p 8096:5000 --rm --name mypyappContainer")
             }
         }
     }
