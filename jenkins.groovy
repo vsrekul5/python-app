@@ -13,7 +13,10 @@ pipeline{
         }
         stage('create image'){
             steps{
-                dockerImage = docker.build reegistry
+                script{
+                    dockerImage = docker.build reegistry
+                }
+                
                 }                
             }
         }
