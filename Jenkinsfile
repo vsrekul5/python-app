@@ -40,7 +40,7 @@ pipeline{
         stage('Run the app in a docker container'){
             steps{
                 script{
-                    dockerImage.run("-p 8096:5000 --rm --name pyappeployContainer")
+                    dockerImage.run("-p 8057:5000 --rm --name pyappeployContainer")
                 }
                 
             }
